@@ -85,8 +85,10 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
-    return app
+    from . import db
+    db.init_app(app)
 
+    return app
 
 # TO RUN THE APP:
 """
